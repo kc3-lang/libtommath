@@ -96,3 +96,5 @@ test_*.txt
 doc/pics/*.ps
 
 callgraph.txt
+
+config.mk
