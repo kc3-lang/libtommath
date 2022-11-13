@@ -21,7 +21,7 @@ LIB_ASAN=libtommath.asan.la
 LIB_COV=libtommath.cov.la
 LIB_DEBUG=libtommath.debug.la
 
-SOURCES="$(ls *.c | tr '\n' ' ')"
+SOURCES="$(ls *.c | grep -v -e bn_mp_set_double.c -e bn_s_mp_rand_platform.c | tr '\n' ' ')"
 echo "SOURCES = $SOURCES" >> ${CONFIG_MK}
 
 OBJECTS="$(c2ext .main.lo "$SOURCES")"
