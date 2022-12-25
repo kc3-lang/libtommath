@@ -61,3 +61,4 @@ test:
 .PHONY: all asan build clean cov debug distclean test
 
 include config.mk
+include sources.mk
