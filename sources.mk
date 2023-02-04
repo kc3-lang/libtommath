@@ -82,6 +82,7 @@ SOURCES = \
 	bn_s_mp_mul_digs_fast.c \
 	bn_s_mp_mul_high_digs.c \
 	bn_s_mp_mul_high_digs_fast.c \
+	bn_s_mp_rand_platform.c \
 	bn_s_mp_sqr.c \
 	bn_s_mp_sqr_fast.c \
 	bn_s_mp_sub.c \
