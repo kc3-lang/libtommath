@@ -26,7 +26,7 @@ all:
 	${MAKE} debug
 	if ${HAVE_ASAN}; then ${MAKE} asan; fi
 
-asan: libtommath.asan.la libtommath.asan.a
+asan: libtommath_asan.la libtommath_asan.a
 
 clean:
 	rm -rf ${CLEANFILES}
@@ -34,9 +34,9 @@ clean:
 clean_cov:
 	rm -rf ${CLEANFILES_COV}
 
-cov: libtommath.cov.la libtommath.cov.a
+cov: libtommath_cov.la libtommath_cov.a
 
-debug: libtommath.debug.la libtommath.debug.a
+debug: libtommath_debug.la libtommath_debug.a
 
 distclean:
 	rm -rf ${DISTCLEANFILES}
@@ -47,14 +47,14 @@ gcovr:
 libtommath.a: libtommath.la
 	cp .libs/libtommath.a ./
 
-libtommath.asan.a: libtommath.asan.la
-	cp .libs/libtommath.asan.a ./
+libtommath_asan.a: libtommath_asan.la
+	cp .libs/libtommath_asan.a ./
 
-libtommath.cov.a: libtommath.cov.la
-	cp .libs/libtommath.cov.a ./
+libtommath_cov.a: libtommath_cov.la
+	cp .libs/libtommath_cov.a ./
 
-libtommath.debug.a: libtommath.debug.la
-	cp .libs/libtommath.debug.a ./
+libtommath_debug.a: libtommath_debug.la
+	cp .libs/libtommath_debug.a ./
 
 test:
 
