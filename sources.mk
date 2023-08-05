@@ -28,6 +28,7 @@ SOURCES = \
 	bn_mp_exch.c \
 	bn_mp_exptmod.c \
 	bn_mp_gcd.c \
+	bn_mp_get_double.c \
 	bn_mp_get_i32.c \
 	bn_mp_get_i64.c \
 	bn_mp_get_mag_u32.c \
