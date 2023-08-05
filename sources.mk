@@ -63,6 +63,7 @@ SOURCES = \
 	bn_mp_reduce_setup.c \
 	bn_mp_rshd.c \
 	bn_mp_set.c \
+	bn_mp_set_double.c \
 	bn_mp_set_i32.c \
 	bn_mp_set_i64.c \
 	bn_mp_set_u32.c \
