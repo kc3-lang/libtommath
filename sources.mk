@@ -70,6 +70,7 @@ SOURCES = \
 	bn_mp_set_l.c \
 	bn_mp_set_u32.c \
 	bn_mp_set_u64.c \
+	bn_mp_set_ul.c \
 	bn_mp_sqr.c \
 	bn_mp_sqrt.c \
 	bn_mp_sub.c \
