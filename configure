@@ -36,7 +36,7 @@ CPPFLAGS="${CPPFLAGS:=}"
 ENV_CFLAGS="${CFLAGS:=}"
 DEFAULT_CFLAGS="-O2 -pipe"
 LDFLAGS="--shared ${LDFLAGS:=}"
-LIBS="${LIBS:=} -rpath ${PREFIX}/lib"
+LIBS="${LIBS} -rpath ${PREFIX}/lib"
 
 # Common config for all targets
 CFLAGS="$CFLAGS -W -Wall -Werror -std=c99 -pedantic -fPIC"
