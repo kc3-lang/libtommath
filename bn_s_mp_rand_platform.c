@@ -14,6 +14,11 @@ static mp_err s_read_arc4random(void *p, size_t n)
    arc4random_buf(p, n);
    return MP_OKAY;
 }
+#else
+static mp_err s_read_arc4random(void *p, size_t n)
+{
+  return MP_ERR;
+}
 #endif
 
 #if defined(_WIN32) || defined(_WIN32_WCE)
@@ -46,6 +51,13 @@ static mp_err s_read_wincsp(void *p, size_t n)
    }
    return CryptGenRandom(hProv, (DWORD)n, (BYTE *)p) == TRUE ? MP_OKAY : MP_ERR;
 }
+#else
+static mp_err s_read_wincsp(void *p, size_t n)
+{
+  (void) p;
+  (void) n;
+  return MP_ERR;
+}
 #endif /* WIN32 */
 
 #if !defined(BN_S_READ_WINCSP_C) && defined(__linux__) && defined(__GLIBC_PREREQ)
@@ -70,7 +82,21 @@ static mp_err s_read_getrandom(void *p, size_t n)
    }
    return MP_OKAY;
 }
+#else
+static mp_err s_read_getrandom(void *p, size_t n)
+{
+  (void) p;
+  (void) n;
+  return MP_ERR;
+}
 #endif
+#else
+static mp_err s_read_getrandom(void *p, size_t n)
+{
+  (void) p;
+  (void) n;
+  return MP_ERR;
+}
 #endif
 
 /* We assume all platforms besides windows provide "/dev/urandom".
@@ -123,6 +149,13 @@ static mp_err s_read_ltm_rng(void *p, size_t n)
    res = ltm_rng(p, n, ltm_rng_callback);
    if (res != n) return MP_ERR;
    return MP_OKAY;
+}
+#else
+static mp_err s_read_ltm_rng(void *p, size_t n)
+{
+  (void) p;
+  (void) n;
+  return MP_ERR;
 }
 #endif
 
