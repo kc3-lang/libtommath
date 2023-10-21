@@ -17,6 +17,8 @@ static mp_err s_read_arc4random(void *p, size_t n)
 #else
 static mp_err s_read_arc4random(void *p, size_t n)
 {
+  (void) p;
+  (void) n;
   return MP_ERR;
 }
 #endif
