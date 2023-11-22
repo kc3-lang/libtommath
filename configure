@@ -31,15 +31,10 @@ OBJECTS_ASAN="$(c2ext .asan.lo "$SOURCES")"
 OBJECTS_COV="$(c2ext .cov.lo "$SOURCES")"
 OBJECTS_DEBUG="$(c2ext .debug.lo "$SOURCES")"
 
-# Default config
-CPPFLAGS="${CPPFLAGS:=}"
-ENV_CFLAGS="${CFLAGS:=}"
-DEFAULT_CFLAGS="-O2 -pipe"
-LDFLAGS="--shared -no-undefined ${LDFLAGS:=}"
-LIBS="${LIBS} -rpath ${PREFIX}/lib"
-
 # Common config for all targets
 CFLAGS="$CFLAGS -W -Wall -Werror -std=c99 -pedantic -fPIC"
+LDFLAGS="--shared -no-undefined $LDFLAGS"
+LIBS="${LIBS} -rpath ${PREFIX}/lib"
 config_asan
 
 # Address Sanitizer config
@@ -58,6 +53,7 @@ LDFLAGS_DEBUG="$LDFLAGS"
 LIBS_DEBUG="$LIBS"
 
 # Main config
+DEFAULT_CFLAGS="-O2 -pipe"
 if [ "x$ENV_CFLAGS" = "x" ]; then
     CFLAGS="$CFLAGS $DEFAULT_CFLAGS"
 fi
