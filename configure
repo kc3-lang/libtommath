@@ -32,7 +32,7 @@ OBJECTS_COV="$(c2ext .cov.lo "$SOURCES")"
 OBJECTS_DEBUG="$(c2ext .debug.lo "$SOURCES")"
 
 # Common config for all targets
-CFLAGS="$CFLAGS -W -Wall -Werror -std=c99 -pedantic -fPIC"
+CFLAGS="$CFLAGS -W -Wall -Werror -std=c99 -pedantic"
 LDFLAGS="--shared $LDFLAGS"
 LIBS="${LIBS} -rpath ${PREFIX}/lib"
 config_asan
