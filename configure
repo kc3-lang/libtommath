@@ -32,7 +32,8 @@ OBJECTS_COV="$(c2ext .cov.lo "$SOURCES")"
 OBJECTS_DEBUG="$(c2ext .debug.lo "$SOURCES")"
 
 # Common config for all targets
-CFLAGS="$CFLAGS -W -Wall -Werror -std=c99 -pedantic"
+CPPFLAGS="$CPPFLAGS"
+CFLAGS="$CFLAGS -W -Wall -Werror -std=c99 -pedantic -fPIC"
 LDFLAGS="--shared $LDFLAGS"
 LIBS="${LIBS} -rpath ${PREFIX}/lib"
 config_asan
@@ -44,7 +45,7 @@ LIBS_ASAN="$LIBS"
 
 # Coverage config
 CFLAGS_COV="$CFLAGS -ftest-coverage -fprofile-arcs"
-LDFLAGS_COV="$LDFLAGS"
+LDFLAGS_COV="$LDFLAGS --coverage"
 LIBS_COV="$LIBS"
 
 # Debug config
