@@ -17,15 +17,15 @@ CLEANFILES += ${CLEANFILES_COV}
 
 DISTCLEANFILES = ${CLEANFILES} config.mk
 
-build: libtommath.la libtommath.a
-
 all:
 	${MAKE} build
 	if ${HAVE_GCOV}; then ${MAKE} cov; fi
 	${MAKE} debug
 	if ${HAVE_ASAN}; then ${MAKE} asan; fi
 
-asan: libtommath_asan.la libtommath_asan.a
+asan: libtommath_asan.la
+
+build: libtommath.la
 
 clean:
 	rm -rf ${CLEANFILES}
@@ -33,27 +33,15 @@ clean:
 clean_cov:
 	rm -rf ${CLEANFILES_COV}
 
-cov: libtommath_cov.la libtommath_cov.a
+cov: libtommath_cov.la
 
-debug: libtommath_debug.la libtommath_debug.a
+debug: libtommath_debug.la
 
 distclean:
 	rm -rf ${DISTCLEANFILES}
 
 gcovr:
 	gcovr --gcov-executable ${GCOV} --html-details libtommath.html
-
-libtommath.a: libtommath.la
-	cp .libs/libtommath.a ./
-
-libtommath_asan.a: libtommath_asan.la
-	cp .libs/libtommath_asan.a ./
-
-libtommath_cov.a: libtommath_cov.la
-	cp .libs/libtommath_cov.a ./
-
-libtommath_debug.a: libtommath_debug.la
-	cp .libs/libtommath_debug.a ./
 
 test:
 

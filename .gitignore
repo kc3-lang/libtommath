@@ -98,3 +98,4 @@ doc/pics/*.ps
 callgraph.txt
 
 config.mk
+.build/
