@@ -34,7 +34,7 @@ OBJECTS_DEBUG="$(c2ext .debug.lo "$SOURCES")"
 
 # Common config for all targets
 CPPFLAGS="$CPPFLAGS"
-CFLAGS="$CFLAGS -W -Wall -Werror -std=c11 -pedantic -pipe"
+CFLAGS="$CFLAGS -W -Wall -Werror -std=c99 -pedantic -pipe"
 LDFLAGS="--shared $LDFLAGS -rdynamic"
 LIBS="${LIBS} -rpath ${PREFIX}/lib"
 config_asan
