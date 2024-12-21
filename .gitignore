@@ -99,11 +99,11 @@ callgraph.txt
 
 config.mk
 .build/
-.build_cc_asan
-.build_cc_cov
-.build_cc_debug
-.build_cc_main
-.build_ld_asan
-.build_ld_cov
-.build_ld_debug
-.build_ld_main
+build_c_asan
+build_c_cov
+build_c_debug
+build_c_main
+build_lib_asan
+build_lib_cov
+build_lib_debug
+build_lib_main
