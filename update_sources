@@ -47,6 +47,7 @@ bn_mp_dr_reduce.c
 bn_mp_dr_setup.c
 bn_mp_error_to_string.c
 bn_mp_exch.c
+bn_mp_expt_u32.c
 bn_mp_exptmod.c
 bn_mp_gcd.c
 bn_mp_get_double.c
