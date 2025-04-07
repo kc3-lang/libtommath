@@ -43,6 +43,10 @@ distclean:
 gcovr:
 	gcovr --gcov-executable ${GCOV} --html-details libtommath.html
 
+install:
+	${INSTALL} -m 0755 -d ${prefix}/lib/libtommath
+	${INSTALL} -m 0644 *.h ${prefix}/lib/libtommath/
+
 test:
 
 .PHONY: all asan build clean cov debug distclean test
