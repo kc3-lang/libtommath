@@ -44,8 +44,9 @@ gcovr:
 	gcovr --gcov-executable ${GCOV} --html-details libtommath.html
 
 install:
-	${INSTALL} -m 0755 -d ${prefix}/include/libtommath
-	${INSTALL} -m 0644 *.h ${prefix}/include/libtommath/
+	${INSTALL} -o ${OWNER} -g ${GROUP} -m 0755 -d ${prefix}/include/libtommath
+	${INSTALL} -o ${OWNER} -g ${GROUP} -m 0644 *.h ${prefix}/include/libtommath/
+
 
 test:
 
