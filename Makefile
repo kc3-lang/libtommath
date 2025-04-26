@@ -47,10 +47,13 @@ install:
 	${INSTALL} -o ${OWNER} -g ${GROUP} -m 0755 -d ${prefix}/include/libtommath
 	${INSTALL} -o ${OWNER} -g ${GROUP} -m 0644 *.h ${prefix}/include/libtommath/
 
+uninstall:
+	rm -rf ${prefix}/include/libtommath
+
 
 test:
 
-.PHONY: all asan build clean cov debug distclean test
+.PHONY: all asan build clean cov debug distclean test uninstall
 
 include config.mk
 include sources.mk
