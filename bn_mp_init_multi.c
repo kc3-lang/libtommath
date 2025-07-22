@@ -12,7 +12,7 @@ mp_err mp_init_multi(mp_int *mp, ...)
    mp_int *cur_arg = mp;
    va_list args;
 
-   va_start(args, mp);        /* init args to next argument from caller */
+   va_start(args, mp); /* init args to next argument from caller */
    while (cur_arg != NULL) {
       if (mp_init(cur_arg) != MP_OKAY) {
          /* Oops - error! Back-track and mp_clear what we already
