@@ -35,6 +35,8 @@ SOURCES = \
 	"bn_mp_exch.c" \
 	"bn_mp_expt_u32.c" \
 	"bn_mp_exptmod.c" \
+	"bn_mp_from_sbin.c" \
+	"bn_mp_from_ubin.c" \
 	"bn_mp_gcd.c" \
 	"bn_mp_get_double.c" \
 	"bn_mp_get_i32.c" \
