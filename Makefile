@@ -44,8 +44,8 @@ gcovr:
 	gcovr --gcov-executable ${GCOV} --html-details libtommath.html
 
 install:
-	${INSTALL} -o ${OWNER} -g ${GROUP} -m 0755 -d ${prefix}/include/libtommath
-	${INSTALL} -o ${OWNER} -g ${GROUP} -m 0644 *.h ${prefix}/include/libtommath/
+	${INSTALL} -o ${OWNER} -g ${GROUP} -m 0755 -d ${DESTDIR}${prefix}/include/libtommath
+	${INSTALL} -o ${OWNER} -g ${GROUP} -m 0644 *.h ${DESTDIR}${prefix}/include/libtommath/
 
 uninstall:
 	rm -rf ${prefix}/include/libtommath
