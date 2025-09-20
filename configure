@@ -17,7 +17,7 @@ echo "$PWD/configure"
 
 export SRC_TOP="$(dirname "$PWD")"
 
-. ../config.subr
+. "${SRC_TOP}/config.subr"
 
 LIB=libtommath.la
 LIB_ASAN=libtommath_asan.la
