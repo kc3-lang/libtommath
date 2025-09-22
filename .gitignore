@@ -97,7 +97,6 @@ doc/pics/*.ps
 
 callgraph.txt
 
-config.mk
 .build/
 build_c_asan
 build_c_cov
@@ -107,3 +106,5 @@ build_lib_asan
 build_lib_cov
 build_lib_debug
 build_lib_main
+config.mk
+.config_*
