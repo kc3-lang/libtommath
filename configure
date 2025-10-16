@@ -13,9 +13,12 @@
 
 set -e
 
-echo "$PWD/configure"
+echo "$0"
+export BUILD_TOP="$(dirname "$PWD")"
+export DIR="$(basename $PWD)"
+export SRC_TOP="$(dirname "$(cd "$(dirname "$0")" && pwd)")"
 
-export SRC_TOP="$(dirname "$PWD")"
+CONFIG_H_PREFIX=LIBKC3_LIBTOMMATH_
 
 . "${SRC_TOP}/config.subr"
 
@@ -24,7 +27,7 @@ LIB_ASAN=libtommath_asan.la
 LIB_COV=libtommath_cov.la
 LIB_DEBUG=libtommath_debug.la
 
-. ./sources.sh
+. "${SRC_DIR}/sources.sh"
 
 OBJECTS="$(c2ext .main.lo "$SOURCES")"
 echo "OBJECTS = $OBJECTS" >> ${CONFIG_MK}
@@ -88,3 +91,7 @@ build_lo
 build_lib
 
 update_config_mk
+
+if [ "x$(dirname "$0")" != "x." ]; then
+    cp ${SRC_DIR}/Makefile ${SRC_DIR}/sources.mk ./
+fi
