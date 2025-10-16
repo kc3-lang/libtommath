@@ -45,7 +45,7 @@ gcovr:
 
 install:
 	${INSTALL} -o ${OWNER} -g ${GROUP} -m 0755 -d ${DESTDIR}${prefix}/include/libtommath
-	${INSTALL} -o ${OWNER} -g ${GROUP} -m 0644 *.h ${DESTDIR}${prefix}/include/libtommath/
+	${INSTALL} -o ${OWNER} -g ${GROUP} -m 0644 ${SRC_DIR}/*.h ${DESTDIR}${prefix}/include/libtommath/
 
 uninstall:
 	rm -rf ${prefix}/include/libtommath
