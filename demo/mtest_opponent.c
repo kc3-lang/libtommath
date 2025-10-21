@@ -72,7 +72,6 @@ static int mtest_opponent(void)
          break;        /* don't clear any */
       }
 
-
       printf("%4lu/%4lu/%4lu/%4lu/%4lu/%4lu/%4lu/%4lu/%4lu/%4lu/%4lu/%4lu/%4lu/%4lu/%4lu ",
              add_n, sub_n, mul_n, div_n, sqr_n, mul2d_n, div2d_n, gcd_n, lcm_n,
              expt_n, inv_n, div2_n, mul2_n, add_d_n, sub_d_n);

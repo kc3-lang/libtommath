@@ -1050,9 +1050,7 @@ static int test_mp_prime_is_prime(void)
 LBL_ERR:
    mp_clear_multi(&a, &b, NULL);
    return EXIT_FAILURE;
-
 }
-
 
 static int test_mp_prime_next_prime(void)
 {
@@ -1060,7 +1058,6 @@ static int test_mp_prime_next_prime(void)
    mp_int a, b, c;
 
    mp_init_multi(&a, &b, &c, NULL);
-
 
    /* edge cases */
    mp_set(&a, 0u);
@@ -1283,8 +1280,6 @@ static int test_mp_read_radix(void)
    if ((err = mp_to_radix(&a, buf, SIZE_MAX, &written, 10)) != MP_OKAY)        goto LTM_ERR;
    printf(" '0' a == %s, length = %zu\n", buf, written);
 
-
-
    /* Although deprecated it needs to function as long as it isn't dropped */
    /*
    printf("Testing deprecated mp_toradix_n\n");
@@ -1296,7 +1291,6 @@ static int test_mp_read_radix(void)
    if( (err = mp_toradix_n(&a, buf, 10, 30) ) != MP_OKAY)                       goto LTM_ERR;
    printf("a == %s\n", buf);
    */
-
 
    while (0) {
       char *s = fgets(buf, sizeof(buf), stdin);
@@ -1816,7 +1810,6 @@ static int test_mp_decr(void)
    } else {
       goto LTM_ERR;
    }
-
 
    /* Does it decrement from -MP_MASK to -(MP_MASK + 1)? */
    mp_set(&a, MP_MASK);

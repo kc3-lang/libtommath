@@ -50,7 +50,6 @@ install:
 uninstall:
 	rm -rf ${prefix}/include/libtommath
 
-
 test:
 
 .PHONY: all asan build clean cov debug distclean test uninstall
