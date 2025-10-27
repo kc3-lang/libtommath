@@ -23,9 +23,9 @@ all:
 	${MAKE} debug
 	if ${HAVE_ASAN}; then ${MAKE} asan; fi
 
-asan: libtommath_asan.la
+asan: ${OBJECTS_ASAN}
 
-build: libtommath.la
+build: ${OBJECTS}
 
 clean:
 	rm -rf ${CLEANFILES}
@@ -33,9 +33,9 @@ clean:
 clean_cov:
 	rm -rf ${CLEANFILES_COV}
 
-cov: libtommath_cov.la
+cov: ${OBJECTS_COV}
 
-debug: libtommath_debug.la
+debug: ${OBJECTS_DEBUG}
 
 distclean:
 	rm -rf ${DISTCLEANFILES}
