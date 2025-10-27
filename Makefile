@@ -23,6 +23,9 @@ all:
 	${MAKE} debug
 	if ${HAVE_ASAN}; then ${MAKE} asan; fi
 
+include config.mk
+include sources.mk
+
 asan: ${OBJECTS_ASAN}
 
 build: ${OBJECTS}
@@ -53,6 +56,3 @@ uninstall:
 test:
 
 .PHONY: all asan build clean cov debug distclean test uninstall
-
-include config.mk
-include sources.mk
