@@ -38,10 +38,8 @@ echo "OBJECTS_COV = $OBJECTS_COV" >> ${CONFIG_MK}
 echo "OBJECTS_DEBUG = $OBJECTS_DEBUG" >> ${CONFIG_MK}
 
 # Common config for all targets
-CPPFLAGS="$CPPFLAGS -DMP_28BIT"
-CFLAGS="$CFLAGS -W -Wall -Werror -std=c99 -pedantic -pipe"
-LDFLAGS="--shared $LDFLAGS -rdynamic"
-LIBS="$LIBS -rpath ${PREFIX}/lib"
+CPPFLAGS="$CPPFLAGS -DMP_28BIT -DPIC"
+CFLAGS="$CFLAGS -W -Wall -Werror -std=c99 -pedantic -pipe -fPIC"
 config_asan
 config_i386
 pkg_config libbsd-overlay
