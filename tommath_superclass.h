@@ -69,7 +69,6 @@
 /* other modifiers */
 #   define BN_MP_DIV_SMALL                    /* Slower division, not critical */
 
-
 /* here we are on the last pass so we turn things off.  The functions classes are still there
  * but we remove them specifically from the build.  This also invokes tweaks in functions
  * like removing support for even moduli, etc...

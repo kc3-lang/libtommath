@@ -25,7 +25,6 @@ mp_err s_mp_toom_sqr(const mp_int *a, mp_int *b)
    int B, count;
    mp_err err;
 
-
    /* init temps */
    if ((err = mp_init(&S0)) != MP_OKAY) {
       return err;
@@ -117,7 +116,6 @@ mp_err s_mp_toom_sqr(const mp_int *a, mp_int *b)
    /** b = b - S0; */
    if ((err = mp_sub(b, &S0, b)) != MP_OKAY)                      goto LBL_ERR;
 
-
    /** \\P = S4*x^4 + S3*x^3 + S2*x^2 + S1*x + S0; */
    /** P = a2*x^4 + a1*x^3 + b*x^2 + a0*x + S0; */
 
@@ -130,7 +128,6 @@ mp_err s_mp_toom_sqr(const mp_int *a, mp_int *b)
    if ((err = mp_add(b, &a0, b)) != MP_OKAY)                      goto LBL_ERR;
    if ((err = mp_add(b, &S0, b)) != MP_OKAY)                      goto LBL_ERR;
    /** a^2 - P  */
-
 
 LBL_ERR:
    mp_clear(&a2);

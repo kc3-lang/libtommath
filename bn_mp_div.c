@@ -35,7 +35,6 @@ mp_err mp_div(const mp_int *a, const mp_int *b, mp_int *c, mp_int *d)
       return err;
    }
 
-
    mp_set(&tq, 1uL);
    n = mp_count_bits(a) - mp_count_bits(b);
    if ((err = mp_abs(a, &ta)) != MP_OKAY)                         goto LBL_ERR;

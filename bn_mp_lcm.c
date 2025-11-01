@@ -9,7 +9,6 @@ mp_err mp_lcm(const mp_int *a, const mp_int *b, mp_int *c)
    mp_err  err;
    mp_int  t1, t2;
 
-
    if ((err = mp_init_multi(&t1, &t2, NULL)) != MP_OKAY) {
       return err;
    }

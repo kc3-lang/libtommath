@@ -181,7 +181,6 @@ mp_err s_mp_toom_mul(const mp_int *a, const mp_int *b, mp_int *c)
    /** a1 = a1 - S2; */
    if ((err = mp_sub(&a1, &S2, &a1)) != MP_OKAY)                  goto LBL_ERR;
 
-
    /** P = b1*x^4+ S2*x^3+ S1*x^2+ a1*x + a0; */
    if ((err = mp_lshd(&b1, 4 * B)) != MP_OKAY)                    goto LBL_ERR;
    if ((err = mp_lshd(&S2, 3 * B)) != MP_OKAY)                    goto LBL_ERR;
@@ -193,7 +192,6 @@ mp_err s_mp_toom_mul(const mp_int *a, const mp_int *b, mp_int *c)
    if ((err = mp_add(&b1, &a0, c)) != MP_OKAY)                    goto LBL_ERR;
 
    /** a * b - P */
-
 
 LBL_ERR:
    mp_clear(&b2);

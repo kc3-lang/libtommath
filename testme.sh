@@ -116,7 +116,6 @@ _make()
   fi
 }
 
-
 _runtest()
 {
   make clean > /dev/null
@@ -161,7 +160,6 @@ echo "autotune branch"
     $_timeout $VALGRIND_BIN $VALGRIND_OPTS ./test > test_${suffix}.log || _die "running tests" $?
   fi
 }
-
 
 _banner()
 {
@@ -320,7 +318,6 @@ then
   fi
   _exit
 fi
-
 
 archflags=( $ARCHFLAGS )
 compilers=( $COMPILERS )

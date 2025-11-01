@@ -108,8 +108,6 @@ mp_err mp_prime_strong_lucas_selfridge(const mp_int *a, mp_bool *result)
       }
    }
 
-
-
    P = 1;              /* Selfridge's choice */
    Q = (1 - Ds) / 4;   /* Required so D = P*P - 4*Q */
 

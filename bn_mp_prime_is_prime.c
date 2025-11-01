@@ -13,7 +13,6 @@ static unsigned int s_floor_ilog2(int value)
    return r;
 }
 
-
 mp_err mp_prime_is_prime(const mp_int *a, int t, mp_bool *result)
 {
    mp_int  b;

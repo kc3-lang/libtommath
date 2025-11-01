@@ -100,7 +100,6 @@ static int isprime(long k)
    return 1;
 }
 
-
 int main(void)
 {
    mp_bool pp;

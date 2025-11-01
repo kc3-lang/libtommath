@@ -52,7 +52,6 @@ static uint64_t s_timer_stop(void)
    return s_timer_function() - s_timer_tmp;
 }
 
-
 static int s_check_result;
 static int s_number_of_test_loops;
 static int s_stabilization_extra;

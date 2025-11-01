@@ -34,7 +34,6 @@ v1.2.0
        -- Improved Toom-Cook multiplication
        -- Removed the LTM book (`make docs` now builds the user manual)
 
-
 Jan 28th, 2019
 v1.1.0
        -- Christoph Zurnieden contributed FIPS 186.4 compliant
@@ -56,7 +55,6 @@ v1.1.0
        -- Improved/fixed mp_lshd() and mp_invmod()
        -- A load more bugs were fixed by various contributors
 
-
 Aug 29th, 2017
 v1.0.1
        -- Dmitry Kovalenko provided fixes to mp_add_d() and mp_init_copy()
@@ -69,7 +67,6 @@ v1.0.1
        -- Use the same 64-bit detection code as in libtomcrypt
        -- Correct usage of DESTDIR, PREFIX, etc. when installing the library
        -- Francois Perrad updated all the perl scripts to an actual perl version
-
 
 Feb 5th, 2016
 v1.0
@@ -90,7 +87,6 @@ v1.0
        -- Carlin provided a patch to use arc4random() instead of rand()
           on platforms where it is supported
        -- Karel Miko provided mp_sqrtmod_prime()
-
 
 July 23rd, 2010
 v0.42.0
@@ -325,7 +321,6 @@ v0.19  -- Fixed a bug in mp_montgomery_reduce() which was introduced when I twea
           Essentially the digits were not trimmed before the compare which cause a subtraction to occur all the time.
        -- Fixed up etc/tune.c a bit to stop testing new cutoffs after 16 failures [to find more optimal points].
           Brute force ho!
-
 
 May 29th, 2003
 v0.18  -- Fixed a bug in s_mp_sqr which would handle carries properly just not very elegantly.

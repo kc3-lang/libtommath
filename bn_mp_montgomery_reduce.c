@@ -71,7 +71,6 @@ mp_err mp_montgomery_reduce(mp_int *x, const mp_int *n, mp_digit rho)
          }
          /* At this point the ix'th digit of x should be zero */
 
-
          /* propagate carries upwards as required*/
          while (u != 0u) {
             *tmpx   += u;

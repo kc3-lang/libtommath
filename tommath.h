@@ -373,7 +373,6 @@ mp_err mp_init_copy(mp_int *a, const mp_int *b) MP_WUR;
 /* trim unused digits */
 void mp_clamp(mp_int *a);
 
-
 /* export binary data */
 MP_DEPRECATED(mp_pack) mp_err mp_export(void *rop, size_t *countp, int order, size_t size,
                                         int endian, size_t nails, const mp_int *op) MP_WUR;
@@ -730,7 +729,6 @@ MP_DEPRECATED(mp_expt_u32) mp_err mp_expt_d_ex(const mp_int *a, mp_digit b, mp_i
 
 /* ---> radix conversion <--- */
 int mp_count_bits(const mp_int *a) MP_WUR;
-
 
 MP_DEPRECATED(mp_ubin_size) int mp_unsigned_bin_size(const mp_int *a) MP_WUR;
 MP_DEPRECATED(mp_from_ubin) mp_err mp_read_unsigned_bin(mp_int *a, const unsigned char *b, int c) MP_WUR;

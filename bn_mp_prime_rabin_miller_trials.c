@@ -43,5 +43,4 @@ int mp_prime_rabin_miller_trials(int size)
    return sizes[x-1].t;
 }
 
-
 #endif

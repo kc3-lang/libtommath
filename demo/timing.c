@@ -20,7 +20,6 @@
 #define LTM_TIMING_RAND_SEED  23
 #endif
 
-
 static void ndraw(mp_int *a, const char *name)
 {
    char buf[4096];
@@ -34,7 +33,6 @@ static void draw(mp_int *a)
 {
    ndraw(a, "");
 }
-
 
 static unsigned long lfsr = 0xAAAAAAAAuL;
 
@@ -140,7 +138,6 @@ int main(int argc, char **argv)
    mp_init(&f);
 
    srand(LTM_TIMING_RAND_SEED);
-
 
    CLK_PER_SEC = TIMFUNC();
    sleep(1);

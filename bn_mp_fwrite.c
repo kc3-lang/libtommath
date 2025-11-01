@@ -35,7 +35,6 @@ mp_err mp_fwrite(const mp_int *a, int radix, FILE *stream)
    }
    err = MP_OKAY;
 
-
 LBL_ERR:
    MP_FREE_BUFFER(buf, (size_t)len);
    return err;

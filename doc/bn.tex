@@ -331,7 +331,6 @@ only if LTM\_LAST has been defined.
 \end{center}
 \end{small}
 
-
 \section{Purpose of LibTomMath}
 Unlike  GNU MP (GMP) Library, LIP, OpenSSL or various other commercial kits (Miracl), LibTomMath was not written with
 bleeding edge performance in mind.  First and foremost LibTomMath was written to be entirely open.  Not only is the
@@ -653,7 +652,6 @@ This function will set the ``bigint'' to zeros without changing the amount of al
 void mp_zero(mp_int *a);
 \end{alltt}
 
-
 \subsection{Reducing Memory Usage}
 When an mp\_int is in a state where it won't be changed again\footnote{A Diffie-Hellman modulus for instance.} excess
 digits can be removed to return memory to the heap with the mp\_shrink() function.
@@ -690,7 +688,6 @@ int main(void)
    \}
 
    /* use it .... */
-
 
    /* we're done with it. */
    mp_clear(&number);
@@ -736,7 +733,6 @@ int main(void)
       return EXIT_FAILURE;
    \}
 
-
    /* use the number */
 
    /* we're done with it. */
@@ -778,7 +774,6 @@ To get the position of the highest bit set (MSB, the Most Significant Bit; the n
 \begin{alltt}
 int mp_count_bits(const mp_int *a);
 \end{alltt}
-
 
 \section{Small Constants}
 Setting mp\_ints to small constants is a relatively common operation.  To accommodate these instances there is a
@@ -1129,7 +1124,6 @@ positive.  This function is rather handy when you have to compare against small 
 comes up in cryptography).  The function cannot fail and will return one of the tree compare condition codes
 listed in figure \ref{fig:CMP}.
 
-
 \begin{small} \begin{alltt}
 int main(void)
 \{
@@ -1366,7 +1360,6 @@ int mp_div (mp_int * a, mp_int * b, mp_int * c, mp_int * d);
 This divides $a$ by $b$ and stores the quotient in $c$ and $d$.  The signed quotient is computed such that
 $bc + d = a$.  Note that either of $c$ or $d$ can be set to \textbf{NULL} if their value is not required.  If
 $b$ is zero the function returns \textbf{MP\_VAL}.
-
 
 \chapter{Multiplication and Squaring}
 \section{Multiplication}
@@ -1764,8 +1757,6 @@ Squaring  $d = (a^2) \mod c$
 int mp_sqrmod(const mp_int *a, const mp_int *b, const mp_int *c, mp_int *d);
 \end{alltt}
 
-
-
 \chapter{Exponentiation}
 \section{Single Digit Exponentiation}
 \index{mp\_expt\_d}
@@ -1813,7 +1804,6 @@ The square root  $c = a^{1/2}$ (with the same conditions $c^2 \le a$ and $(c+1)^
 \begin{alltt}
 int mp_sqrt (mp_int * a, mp_digit b, mp_int * c)
 \end{alltt}
-
 
 \chapter{Logarithm}
 \section{Integer Logarithm}
@@ -1877,8 +1867,6 @@ int main(int argc, char **argv)
    exit(EXIT_SUCCESS);
 }
 \end{alltt}
-
-
 
 \chapter{Prime Numbers}
 \section{Trial Division}
@@ -2052,7 +2040,6 @@ Testing if a number is a square can be done a bit faster than just by calculatin
 int mp_is_square(const mp_int *arg, int *ret);
 \end{alltt}
 
-
 \index{mp\_prime\_is\_prime}
 \begin{alltt}
 int mp_prime_is_prime (mp_int * a, int t, int *result)
@@ -2131,7 +2118,6 @@ This function generates a random number of \texttt{digits} bits.
 
 The random number generated with these two functions is cryptographically secure if the source of random numbers the operating systems offers is cryptographically secure. It will use \texttt{arc4random()} if the OS is a BSD flavor, Wincrypt on Windows, or \texttt{/dev/urandom} on all operating systems that have it.
 
-
 \chapter{Input and Output}
 \section{ASCII Conversions}
 \subsection{To ASCII}
@@ -2150,7 +2136,6 @@ of length \texttt{maxlen-1}, then \texttt{str} will be \texttt{NUL} terminated a
 
 Please be aware that this function cannot evaluate the actual size of the buffer, it relies on the correctness of \texttt{maxlen}!
 
-
 \index{mp\_radix\_size}
 \begin{alltt}
 int mp_radix_size (mp_int * a, int radix, int *size)
@@ -2163,7 +2148,6 @@ If \texttt{LTM\_NO\_FILE} is not defined a function to write to a file is also a
 \begin{alltt}
 int mp_fwrite(const mp_int *a, int radix, FILE *stream);
 \end{alltt}
-
 
 \subsection{From ASCII}
 \index{mp\_read\_radix}
@@ -2179,7 +2163,6 @@ If \texttt{LTM\_NO\_FILE} is not defined a function to read from a file is also 
 \begin{alltt}
 int mp_fread(mp_int *a, int radix, FILE *stream);
 \end{alltt}
-
 
 \section{Binary Conversions}
 
@@ -2291,7 +2274,6 @@ int mp_kronecker (mp_int * a, mp_int * p, int *c)
 \end{alltt}
 Extension of the Jacoby symbol to all $\lbrace a, p \rbrace \in \mathbb{Z}$ .
 
-
 \section{Modular square root}
 \index{mp\_sqrtmod\_prime}
 \begin{alltt}
@@ -2343,7 +2325,6 @@ int mp_incr(mp_int *a);
 int mp_decr(mp_int *a);
 \end{alltt}
 
-
 The division by three can be made faster by replacing the division with a multiplication by the multiplicative inverse of three.
 
 \index{mp\_div\_3}
@@ -2374,13 +2355,11 @@ int mp_isneg(mp_int *a)
 \end{alltt}
 Checks if $a < 0$
 
-
 \index{mp\_iszero}
 \begin{alltt}
 int mp_iszero(mp_int *a)
 \end{alltt}
 Checks if $a = 0$. It does not check if the amount of memory allocated for $a$ is also minimal.
-
 
 Other macros which are either shortcuts to normal functions or just other names for them do have their place in a programmer's life, too!
 
@@ -2390,37 +2369,30 @@ Other macros which are either shortcuts to normal functions or just other names 
 #define mp_mag_size(mp) mp_unsigned_bin_size(mp)
 \end{alltt}
 
-
 \index{mp\_raw\_size}
 \begin{alltt}
 #define mp_raw_size(mp) mp_signed_bin_size(mp)
 \end{alltt}
-
 
 \index{mp\_read\_mag}
 \begin{alltt}
 #define mp_read_mag(mp, str, len) mp_read_unsigned_bin((mp), (str), (len))
 \end{alltt}
 
-
 \index{mp\_read\_raw}
 \begin{alltt}
  #define mp_read_raw(mp, str, len) mp_read_signed_bin((mp), (str), (len))
 \end{alltt}
-
 
 \index{mp\_tomag}
 \begin{alltt}
 #define mp_tomag(mp, str) mp_to_unsigned_bin((mp), (str))
 \end{alltt}
 
-
 \index{mp\_toraw}
 \begin{alltt}
 #define mp_toraw(mp, str)         mp_to_signed_bin((mp), (str))
 \end{alltt}
-
-
 
 \subsection{Shortcuts}
 
@@ -2429,18 +2401,15 @@ Other macros which are either shortcuts to normal functions or just other names 
 #define mp_to_binary(M, S, N)  mp_to_radix((M), (S), (N), 2)
 \end{alltt}
 
-
 \index{mp\_to\_octal}
 \begin{alltt}
 #define mp_to_octal(M, S, N)   mp_to_radix((M), (S), (N), 8)
 \end{alltt}
 
-
 \index{mp\_to\_decimal}
 \begin{alltt}
 #define mp_to_decimal(M, S, N) mp_to_radix((M), (S), (N), 10)
 \end{alltt}
-
 
 \index{mp\_to\_hex}
 \begin{alltt}

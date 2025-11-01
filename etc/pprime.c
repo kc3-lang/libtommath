@@ -29,7 +29,6 @@ static mp_digit i_sqrt(mp_word x)
    return x1;
 }
 
-
 /* generates a prime digit */
 static void gen_prime(void)
 {
@@ -176,7 +175,6 @@ static mp_digit prime_digit(void)
    fread(&d, 1uL, sizeof(mp_digit), primes);
    return d;
 }
-
 
 /* makes a prime of at least k bits */
 static mp_err pprime(int k, int li, mp_int *p, mp_int *q)
@@ -373,7 +371,6 @@ LBL_C:
    return res;
 }
 
-
 int main(void)
 {
    mp_int  p, q;
@@ -391,7 +388,6 @@ int main(void)
    printf("Enter number of bases to try (1 to 8):\n");
    fgets(buf, sizeof(buf), stdin);
    sscanf(buf, "%d", &li);
-
 
    mp_init(&p);
    mp_init(&q);
