@@ -12,7 +12,7 @@
 
 CLEANFILES = *.a *.gcno *.la .libs libtommath.la *.lo *.o
 
-CLEANFILES_COV = *.css *.gcda *.html .libs/*.gcda
+CLEANFILES_COV = *.css *.gcda *.html
 CLEANFILES += ${CLEANFILES_COV}
 
 DISTCLEANFILES = ${CLEANFILES} config.mk
