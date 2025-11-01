@@ -10,13 +10,6 @@
 ## AUTHOR BE CONSIDERED LIABLE FOR THE USE AND PERFORMANCE OF
 ## THIS SOFTWARE.
 
-CLEANFILES = *.a *.gcno *.la .libs libtommath.la *.lo *.o
-
-CLEANFILES_COV = *.css *.gcda *.html
-CLEANFILES += ${CLEANFILES_COV}
-
-DISTCLEANFILES = ${CLEANFILES} config.mk
-
 all:
 	${MAKE} build
 	if ${HAVE_GCOV}; then ${MAKE} cov; fi
@@ -30,18 +23,9 @@ asan: ${OBJECTS_ASAN}
 
 build: ${OBJECTS}
 
-clean:
-	rm -rf ${CLEANFILES}
-
-clean_cov:
-	rm -rf ${CLEANFILES_COV}
-
 cov: ${OBJECTS_COV}
 
 debug: ${OBJECTS_DEBUG}
-
-distclean:
-	rm -rf ${DISTCLEANFILES}
 
 gcovr:
 	gcovr --gcov-executable ${GCOV} --html-details libtommath.html
@@ -55,4 +39,4 @@ uninstall:
 
 test:
 
-.PHONY: all asan build clean cov debug distclean test uninstall
+.PHONY: all asan build cov debug test uninstall
