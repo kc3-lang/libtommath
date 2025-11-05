@@ -35,8 +35,6 @@ SOURCES = \
 	"bn_mp_exch.c" \
 	"bn_mp_expt_u32.c" \
 	"bn_mp_exptmod.c" \
-	"bn_mp_from_sbin.c" \
-	"bn_mp_from_ubin.c" \
 	"bn_mp_gcd.c" \
 	"bn_mp_get_double.c" \
 	"bn_mp_get_i32.c" \
@@ -63,6 +61,8 @@ SOURCES = \
 	"bn_mp_mulmod.c" \
 	"bn_mp_neg.c" \
 	"bn_mp_or.c" \
+	"bn_mp_pack.c" \
+	"bn_mp_pack_count.c" \
 	"bn_mp_radix_size.c" \
 	"bn_mp_reduce.c" \
 	"bn_mp_reduce_2k.c" \
@@ -73,7 +73,6 @@ SOURCES = \
 	"bn_mp_reduce_is_2k_l.c" \
 	"bn_mp_reduce_setup.c" \
 	"bn_mp_rshd.c" \
-	"bn_mp_sbin_size.c" \
 	"bn_mp_set.c" \
 	"bn_mp_set_double.c" \
 	"bn_mp_set_i32.c" \
@@ -86,9 +85,7 @@ SOURCES = \
 	"bn_mp_sqrt.c" \
 	"bn_mp_sub.c" \
 	"bn_mp_sub_d.c" \
-	"bn_mp_to_sbin.c" \
-	"bn_mp_to_ubin.c" \
-	"bn_mp_ubin_size.c" \
+	"bn_mp_unpack.c" \
 	"bn_mp_xor.c" \
 	"bn_mp_zero.c" \
 	"bn_s_mp_add.c" \
